@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductData} from '../productData'
 
 @Component({
   selector: 'app-view-product-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-product-list.component.css']
 })
 export class ViewProductListComponent implements OnInit {
+
+  productList: ProductData []= [];
 
   constructor() { }
 
