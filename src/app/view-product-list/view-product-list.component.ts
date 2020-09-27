@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthorData } from '../authorData';
 import {ProductData} from '../productData'
 
 @Component({
@@ -8,9 +9,24 @@ import {ProductData} from '../productData'
 })
 export class ViewProductListComponent implements OnInit {
 
-  productList: ProductData []= [];
+author1:AuthorData={
+  id: 1,
+    firstName: "Nicoleta",
+  lastName: "Oprea"
+}
 
-  constructor() { }
+  productList: ProductData []= [
+    {
+      id : 1,
+title : "PC HP",
+thumbnail : "string",
+price : 1000,
+ author: this.author1 
+
+    }
+  ]
+
+    constructor() { }
 
   ngOnInit(): void {
   }

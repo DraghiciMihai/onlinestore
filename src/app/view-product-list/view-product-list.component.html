@@ -1,1 +1,8 @@
-<p>view-product-list works!</p>
+
+<div>
+    <div *ngFor="let product of productList">
+        <div>{{product.id}}. {{product.title }} -author: 
+            <p *ngFor="let item of productList.author">{{item.id}}. {{item.firstName}}, {{item.lastName}} </p>
+        </div>  
+    </div>
+</div>
