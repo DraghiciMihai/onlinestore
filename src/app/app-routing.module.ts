@@ -7,7 +7,7 @@ import { ViewProductListComponent } from './view-product-list/view-product-list.
 
 const routes: Routes = [
   {path:'view-productList', component:ViewProductListComponent},
-  {path:'register', component:RegisterComponent}
+  {path:'register', component:RegisterComponent},
   {path:'getOrders', component: OrderComponent}
 ];
 
