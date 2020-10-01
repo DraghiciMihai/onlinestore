@@ -1,0 +1,23 @@
+<p>Product description</p>
+
+<div>
+    <p>Title:</p>
+    <input type="text" [(ngModel)]= "product.title" placeholder="Title:"/>
+    
+    <!-- <p>Product Type:</p> 
+    <input type="text" [(ngModel)]="product.type" placeholder="Product Type:"/>  
+    
+    trebuie sa il declar in PRODUCT DATA, dar nu stiu cum ca e enum-->
+    
+    <p>Price</p>
+    <input type="number" [(ngModel)]= "product.price" placeholder="price" />
+
+    <p>Description</p>
+    <input type="textarea" placeholder= "Aici va fi descrierea."/>
+
+    <p>The product category is: </p>
+    <input type="text" [(ngModel)]= "product.category.name"/>
+
+</div>
+
+<button (click)="addProduct()">Add Product</button>
