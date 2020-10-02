@@ -19,7 +19,17 @@ public getProduct(id:number):Observable <ProductData>{
 }
 
 public addProduct(product:ProductData): Observable<any>{
-  return this.httpClient.post<ProductData>('http://localhost:8080/addProduct', product);
+  return this.httpClient.post<any>('http://localhost:8080/addProduct', product);
 }
+
+
+public deleteProduct(id:number):Observable<any>{
+  return this.httpClient.delete<any>('http://localhost:8080/deleteProduct/'+ id);
+}
+ public updateProduct(product:ProductData): Observable<any>{
+   return this.httpClient.put<any>('http://localhost:8080/editProduct/', product);
+ }
+
+ 
 
 }

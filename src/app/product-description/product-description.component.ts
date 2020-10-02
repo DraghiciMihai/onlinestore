@@ -17,26 +17,12 @@ export class ProductDescriptionComponent implements OnInit {
   constructor(private  activatedRoute:ActivatedRoute, private productService:ProductService) { }
 
   ngOnInit():   void {}
-  //   let id=this.activatedRoute.snapshot.paramMap.get('id');
-  //   console.log("id este "+ id);
-  //   this.productService.getProduct(Number(id)).subscribe(productResult=>
-  //     this.product=productResult);
+  public getProduct(){
+    let id=this.activatedRoute.snapshot.paramMap.get('id');
+    console.log("id este "+ id);
+    this.productService.getProduct(Number(id)).subscribe(productResult=>
+      this.product=productResult);
 
-  // }
-
-
-  public addProduct(){
-    console.log("descrierea produsului")
   }
-  
-  
-  
-  // : void {
-  //   let id=this.activatedRoute.snapshot.paramMap.get('id');
-  //   console.log("id este "+ id);
-  //   this.productService.getProduct(Number(id)).subscribe(productResult=>
-  //     this.product=productResult);
-
-  
 
 }

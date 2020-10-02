@@ -10,14 +10,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-product-admin.component.css']
 })
 export class AddProductAdminComponent implements OnInit {
+
   product:ProductData= new ProductData;
   category:CategoryData= new CategoryData;
 
   constructor(private productService:ProductService, private router:Router) { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 public addProduct(): void {
 
    this.productService.addProduct(this.product).subscribe(result =>{
@@ -25,5 +24,8 @@ public addProduct(): void {
     this.router.navigateByUrl("");
    });
   }
+
+
+ 
 }
 

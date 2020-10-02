@@ -1,4 +1,5 @@
 import { AuthorData } from "./authorData";
+import { CategoryData } from './categoryData';
 
 export class ProductData{
 
@@ -7,6 +8,7 @@ title : string;
 thumbnail : string;
 price : number;
 author: AuthorData;
+category:CategoryData;
 
     
     // private CategoryDto category;
