@@ -12,31 +12,25 @@ import { CategoryData } from '../categoryData';
 export class ProductDescriptionComponent implements OnInit {
 
   product:ProductData= new ProductData;
-  category:CategoryData;
+  // category:CategoryData;
 
   constructor(private  activatedRoute:ActivatedRoute, private productService:ProductService) { }
 
-  ngOnInit():   void {}
-  //   let id=this.activatedRoute.snapshot.paramMap.get('id');
-  //   console.log("id este "+ id);
-  //   this.productService.getProduct(Number(id)).subscribe(productResult=>
-  //     this.product=productResult);
-
-  // }
-
-
-  public addProduct(){
-    console.log("descrierea produsului")
+  ngOnInit(): void {
+    let id=this.activatedRoute.snapshot.paramMap.get('id');
+    console.log("id este "+ id);
+    this.productService.getProduct(Number(id)).subscribe(productResult => {
+      this.product = productResult;
+      this.product.category = productResult.category;
+      console.log("product.category: " + this.product.category.name);
+      if (productResult.category !== null) {
+        console.log("Categoria venita din backend: " + productResult.category.name);
+      } else {
+        console.log("Categoria a venit null din backend.");
+      }
+    });
   }
-  
-  
-  
-  // : void {
-  //   let id=this.activatedRoute.snapshot.paramMap.get('id');
-  //   console.log("id este "+ id);
-  //   this.productService.getProduct(Number(id)).subscribe(productResult=>
-  //     this.product=productResult);
 
-  
+  public getProduct() {}
 
 }

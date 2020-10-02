@@ -1,11 +1,13 @@
 
-<button routerLink="add-product-admin">Add product</button>
+<button routerLink="/add-product-admin">Add product</button>
 
 <div>
     <div *ngFor="let product of productList">
         <div>{{product.id}}. {{product.title }} -author: 
             <p *ngFor="let item of productList.author">{{item.id}}. {{item.firstName}}, {{item.lastName}} </p>
-        <button routerLink="product-description/{{item.id}}"> Show product</button>
+        <button routerLink="/product-description/{{product.id}}"> Show product</button>        
+        <button routerLink="/update-product-admin/{{product.id}}"> Update product</button>
+        <button (click)="delete(product.id)">Delete</button>
         
         </div>  
     </div>
