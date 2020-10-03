@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorData } from '../authorData';
+import { ProductService } from '../product.service';
 import {ProductData} from '../productData'
 
 @Component({
@@ -9,26 +10,23 @@ import {ProductData} from '../productData'
 })
 export class ViewProductListComponent implements OnInit {
 
-author1:AuthorData={
-  id: 1,
-    firstName: "Nicoleta",
-  lastName: "Oprea"
-}
 
-  productList: ProductData []= [
-    {
-      id : 1,
-title : "PC HP",
-thumbnail : "string",
-price : 1000,
- author: this.author1 
+  productList: ProductData []= [];
 
-    }
-  ]
-
-    constructor() { }
+    constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
+    this.productService.getProducts().subscribe(foundListOfProduct=>
+      this.productList=foundListOfProduct)
   }
+
+  public delete(id:number){
+    this.productService.deleteProduct(id).subscribe(message=>{
+      this.ngOnInit();
+      console.log("Product was deleted");
+    })
+  }
+
+
 
 }
