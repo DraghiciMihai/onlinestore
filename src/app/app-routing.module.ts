@@ -14,6 +14,7 @@ import { CategoriesComponent } from './categories/categories.component';
 
 
 const routes: Routes = [
+  {path: '', component: CategoryComponent},
   {path:'view-productList', component:ViewProductListComponent},
   {path:'product-description/:id', component:ProductDescriptionComponent},
   {path:'add-product-admin', component:AddProductAdminComponent},
