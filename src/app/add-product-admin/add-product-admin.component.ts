@@ -3,6 +3,7 @@ import { CategoryData } from '../categoryData';
 import { ProductService } from '../product.service';
 import { ProductData } from '../productData';
 import {Router} from '@angular/router';
+import { AuthorData } from '../authorData';
 
 @Component({
   selector: 'app-add-product-admin',
@@ -13,6 +14,7 @@ export class AddProductAdminComponent implements OnInit {
 
   product:ProductData= new ProductData;
   category:CategoryData= new CategoryData;
+  author:AuthorData=new AuthorData;
 
   constructor(private productService:ProductService, private router:Router) { }
 
@@ -20,7 +22,6 @@ export class AddProductAdminComponent implements OnInit {
   ngOnInit(): void {
     this.product.category = this.category;
   }
-
 
 
 public addProduct(): void {

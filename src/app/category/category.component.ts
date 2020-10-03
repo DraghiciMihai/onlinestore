@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryDataService } from '../service/data/category-data.service'
 import { RouterModule } from '@angular/router';
 
+
 export class Category {
   constructor(
     public id: number,
@@ -16,6 +17,7 @@ export class Category {
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
+
 
 export class CategoryComponent implements OnInit {
 
