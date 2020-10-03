@@ -1,1 +1,53 @@
-<title>Registration</title>
+<h2>Registration</h2>
+<div>
+    <p>Username:</p>
+    <input type="text" [(ngModel)]="" placeholder="username">
+    
+    <p>Password:</p>
+    <input type="password" [(ngModel)]="userAccount.password" placeholder="password">
+
+    <p>City:</p>
+    <input type="text" [(ngModel)]="userAccount.password" placeholder="Brasov">
+
+    <form>
+
+        <div>
+            <p>Home address</p>
+            
+            <p>Country</p>
+            <input type="text"  placeholder="Romania">
+
+            <p>City</p>
+            <input type="text" placeholder="Brasov">
+
+            <p>Street</p>
+            <input type="text" placeholder="Strada Calea Bucuresti, nr. 20">
+
+            <p>Zipcode</p>
+            <input type="number" placeholder="321534">
+        </div>
+        <input type="checkbox" name="sameaddress" onclick="FillAddress(this.form)">
+
+        <div>
+            <p>Delivery address</p>
+            
+            <p>Country</p>
+            <input type="text" placeholder="Romania">
+
+            <p>City</p>
+            <input type="text" placeholder="Brasov">
+
+            <p>Street</p>
+            <input type="text" placeholder="Strada Calea Bucuresti, nr. 20">
+
+            <p>Zipcode</p>
+            <input type="number" placeholder="321534">
+        </div>
+    </form>
+
+    <p>Logo</p>
+    <input type="text" [(ngModel)]="userAccount.password" placeholder="logo">
+
+</div>
+
+<button (onclick)="addUserAccount()">Register</button>
