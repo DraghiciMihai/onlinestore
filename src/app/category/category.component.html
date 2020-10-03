@@ -1,1 +1,15 @@
-<p>category works!</p>
+<h1>All Categories</h1><br>
+<div class="container">
+
+    <ul *ngFor="let category of categories">
+        <li *ngIf="!category.parentCategory">
+            <p>{{category.name}}</p>
+            <ul *ngFor="let subcategory of category.subcategory">
+                <li *ngIf="subcategory">
+                    <p style=""><button class="btn btn-success">Go to</button> {{subcategory.name}}</p> 
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
