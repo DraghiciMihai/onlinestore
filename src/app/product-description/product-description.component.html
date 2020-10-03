@@ -1,21 +1,41 @@
-<p>Product description</p>
+<h1>Product description</h1>
 
 <div>
-    <p>Title:</p>
-    <input type="text" [(ngModel)]= "product.title" placeholder="Title:"/>
-    
-        <!-- <p>Product Type:</p> -->
-    <!-- <input type="text" [(Ngmodule)]="product.type"/> -->
-    
-    <p>Price</p>
-    <input type="number" [(ngModel)]= "product.price" />
+    <form>
+        <fieldset class="form-group">
+            <label for="title">Title:</label>
+            <input class="form-control" name="title" type="text" [(ngModel)]="product.title" placeholder="Title:">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="price">Price:</label>
+            <input class="form-control" name="price" type="number" [(ngModel)]="product.price">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="description">Description:</label>
+            <input class="form-control" name="description" type="textarea" placeholder="Aici va fi descrierea.">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="parentCategory"></label>
+            <select class="form-control" [(ngModel)]="product.category.name" name="parentCategory"
+            value="product.category.name">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let category of categories" [ngValue]="product.category.name">
+                {{category.name}}
+            </option>
+        </select>
+        </fieldset>
 
-    <p>Description</p>
-    <input type="textarea" placeholder= "Aici va fi descrierea."/>
+        <!-- <p>The product category is: </p>
+        <input type="text" [(ngModel)]="product.category.name" />
 
-    <p>The product category is: </p>
-    <input type="text" [(ngModel)]= "product.category.name"/>
-
+        <fieldset class="form-group">
+        <label for="parentCategory">Select Parent Categoty</label>
+        <select class="form-control" [(ngModel)]="category.parentCategory" name="parentCategory"
+            value="category.parentCategory">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let category of categories" [ngValue]="category">
+                {{category.name}}
+            </option>
+        </select> -->
+    </form>
 </div>
-
-
