@@ -17,6 +17,7 @@ import { UpdateProductAdminComponent } from './update-product-admin/update-produ
 import { OrderLineListComponent } from './order-line-list/order-line-list.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { ProductListUserComponent } from './product-list-user/product-list-user.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ProductListUserComponent } from './product-list-user/product-list-user.
     OrderLineListComponent,
     OrderListComponent,
     ProductListUserComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,

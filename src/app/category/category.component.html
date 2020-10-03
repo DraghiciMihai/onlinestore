@@ -1,15 +1,27 @@
-<h1>All Categories</h1><br>
+<h1 class="text-primary">All Categories</h1><br>
+<div class='alert alert-success' *ngIf='deleteMessage'>{{deleteMessage}}</div>
 <div class="container">
 
     <ul *ngFor="let category of categories">
         <li *ngIf="!category.parentCategory">
-            <p>{{category.name}}</p>
+            <p class="font-weight-bold"> {{category.name}} 
+                <span><button class="btn btn-outline-success btn-sm" (click)="updateCategory(category)">Update</button> <button
+                    class="btn btn-outline-danger btn-sm" (click)="deleteCategory(category)">Delete</button></span>
+            </p>
+            
             <ul *ngFor="let subcategory of category.subcategory">
                 <li *ngIf="subcategory">
-                    <p style=""><button class="btn btn-success">Go to</button> {{subcategory.name}}</p> 
+                    <p><button class="btn btn-link">{{subcategory.name}}</button> 
+                        <span><button class="btn btn-outline-success btn-sm" (click)="updateCategory(subcategory)">Update</button> <button
+                            class="btn btn-outline-danger btn-sm" (click)="deleteCategory(subcategory)">Delete</button></span>
+                    </p>
+                    
                 </li>
             </ul>
         </li>
     </ul>
 
+</div><br><br>
+<div>
+    <button class="btn btn-secondary" (click)="addCategory()">Add Category</button>
 </div>

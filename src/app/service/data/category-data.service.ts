@@ -28,7 +28,7 @@ export class CategoryDataService {
     return this.http.put('http://localhost:8080/editCategory', category)
   }
 
-  createTodo(category) {
+  createCategory(category) {
     return this.http.post('http://localhost:8080/addCategory', category)
   }
 }
