@@ -16,6 +16,7 @@ export class ProductDescriptionComponent implements OnInit {
 
   constructor(private  activatedRoute:ActivatedRoute, private productService:ProductService) { }
 
+
   ngOnInit(): void {
     let id=this.activatedRoute.snapshot.paramMap.get('id');
     console.log("id este "+ id);
@@ -31,6 +32,4 @@ export class ProductDescriptionComponent implements OnInit {
     });
   }
 
-  public getProduct() {}
-
-}
+  }

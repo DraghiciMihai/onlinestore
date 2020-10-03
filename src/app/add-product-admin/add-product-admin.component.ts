@@ -16,9 +16,12 @@ export class AddProductAdminComponent implements OnInit {
 
   constructor(private productService:ProductService, private router:Router) { }
 
+
   ngOnInit(): void {
     this.product.category = this.category;
   }
+
+
 
 public addProduct(): void {
 
