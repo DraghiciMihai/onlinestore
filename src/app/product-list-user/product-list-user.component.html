@@ -1,0 +1,14 @@
+button routerLink="/add-product-admin">Add product</button>
+
+<div>
+    <div *ngFor="let product of productList">
+        <div>{{product.id}}. {{product.title }},  
+            <!-- author: id: {{product.author.id}}, name:{{product.author.name}} -->
+        
+        <button routerLink="/product-description/{{product.id}}"> Show product</button> 
+        <button (click)="addToCart(product.id)">Add to cart</button>       
+
+        
+        </div>  
+    </div>
+</div>

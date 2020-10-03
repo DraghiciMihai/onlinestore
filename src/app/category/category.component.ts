@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {CategoryDataService} from '../service/data/category-data.service'
 import { RouterModule } from '@angular/router';
 
-@Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
-})
 
 export class Category {
   constructor(
@@ -16,6 +11,13 @@ export class Category {
     public parentCategory: Category
   ) {}
 }
+
+@Component({
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css']
+})
+
 
 export class CategoryComponent implements OnInit {
   constructor(

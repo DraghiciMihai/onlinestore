@@ -7,7 +7,8 @@ import{ProductDescriptionComponent} from './product-description/product-descript
  import {AddProductAdminComponent}from './add-product-admin/add-product-admin.component'
 import { UpdateProductAdminComponent } from './update-product-admin/update-product-admin.component';
 
-import {CategoryComponent} from './category/category.component'
+import {CategoryComponent} from './category/category.component';
+import { ProductListUserComponent } from './product-list-user/product-list-user.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path:'getOrders', component: OrderListComponent},
   {path:'update-product-admin/:id', component: UpdateProductAdminComponent},
-  {path: 'categories', component: CategoryComponent}
+  {path: 'categories', component: CategoryComponent},
+  {path:'productList-user', component :ProductListUserComponent}
 ];
 
 @NgModule({
