@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UserAccountData } from './useAccountData';
+import { UserAccountData } from './userAccountData';
 
 @Injectable({
   providedIn: 'root'
@@ -25,4 +25,8 @@ export class UserAccountService {
   public deleteUserAccount(id: number): Observable<string>{
     return this.httpClient.delete<string>('http://localhost:8080/deleteUserAccount');
   }
+
+  public editUserAccount(userAccount: UserAccountData): Observable<any>{
+    return this.httpClient.put<any>('http://localhost:8080/editUserAccount', userAccount);
+ }
 }

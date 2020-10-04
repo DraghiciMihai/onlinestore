@@ -1,3 +1,33 @@
+<h2>Your profile</h2>
+<br>
+
 <div *ngFor='let user of userAccount'>
-    <p>Username: {{userAccount}}</p>
+    <p>Username: {{user.login}}</p>
+    <p>Password: {{user.password}}</p>
+    <p>City: {{user.city}}</p>
+</div>
+<br>
+<hr>
+<div *ngFor='let address of userAccount'>
+    <p>Your home address:</p>
+    <br>
+    <p>Country: {{address.userAddress.country}}</p>
+    <p>City: {{address.city}}</p>
+    <p>Street: {{address.street}}</p>
+    <p>Zipcode: {{address.zipcode}}</p>
+</div>
+<br>
+<hr>
+<div *ngFor='let delivery of userAccount'>
+    <p>Your delivery address</p>
+    <br>
+    <p>Country: {{delivery.deliveryAddress.country}}</p>
+    <p>City: {{delivery.city}}</p>
+    <p>Street: {{delivery.street}}</p>
+    <p>Zipcode: {{delivery.zipcode}}</p>
+</div>
+<br>
+<div *ngFor='let account of userAccount'>
+    <button (click)="delet(account.id)">DELETE</button>
+    <button routerLink="/edit-user-account/{{account.id}}">EDIT</button>
 </div>
