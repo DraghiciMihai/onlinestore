@@ -15,7 +15,8 @@
     <input type="textarea" placeholder="Aici va fi descrierea." />
 
     <p>The product category is: </p>
-    <input type="text" [(ngModel)]="product.category.name" />
+    <input *ngIf="product.category" type="text" [(ngModel)]="product.category.name" />
+    <input *ngIf="!product.category" type="text"  />
 
 </div>
 <button routerLink="/update-product-admin/{{product.id}}"> Go to update</button>

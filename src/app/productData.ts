@@ -7,7 +7,7 @@ id : number;
 title : string;
 thumbnail : string;
 price : number;
-author: AuthorData;
+author: AuthorData= new AuthorData;
 category:Category;
 
     
