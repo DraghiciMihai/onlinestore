@@ -1,7 +1,7 @@
 export class CategoryData{
 id:number;
 name:string;
-subcategory:CategoryData;
+subcategory:CategoryData[];
 parentCategory:CategoryData
 
 toString(): string {

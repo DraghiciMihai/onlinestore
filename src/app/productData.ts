@@ -1,5 +1,5 @@
 import { AuthorData } from "./authorData";
-import { CategoryData } from './categoryData';
+import { Category } from './category/category.component';
 
 export class ProductData{
 
@@ -8,7 +8,7 @@ title : string;
 thumbnail : string;
 price : number;
 author: AuthorData;
-category:CategoryData;
+category:Category;
 
     
     // private CategoryDto category;

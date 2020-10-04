@@ -1,0 +1,27 @@
+<h1 class="text-gray">Create or Update Category - "{{category.name}}"</h1>
+<div class="container">
+    <div class="alert alert-warning" *ngIf="name.invalid && categoryForm.dirty">Enter at least 3 characters</div>
+
+    <form (ngSubmit)="!categoryForm.invalid && saveCategory()" #categoryForm="ngForm">
+        <fieldset class="form-group">
+            <label for="name"> Name </label>
+            <input class="form-control" type="text" [(ngModel)]="category.name" name="name" required="required"
+                minlength="3" #name="ngModel">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="parentCategory">Select Parent Categoty</label>
+            <select class="form-control" [(ngModel)]="category.parentCategory" name="parentCategory"
+                value="category.parentCategory">
+                <option [ngValue]="null"></option>
+                <option *ngFor="let category of categories" [ngValue]="category">
+                    {{category.name}}
+                </option>
+            </select>
+        </fieldset>
+        <span>
+            <button type="submit" class="btn btn-success">Save</button> <br><br>
+            <button class="btn btn-light" (click)=back()>Go Back</button>
+        </span>
+    </form>
+</div>
