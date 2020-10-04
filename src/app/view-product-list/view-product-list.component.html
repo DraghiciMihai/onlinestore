@@ -35,10 +35,11 @@
             <td>{{product.id}} </td>
             <td>{{product.title }}</td>
             <td *ngIf="product.category">{{product.category.name}} </td>
-            <!-- <td> </td> -->
+            <td *ngIf="!product.category"> </td>
             <td>{{product.price}} </td>
-            <td *ngIf="product.author">{{product.author.firstname}} </td>
-            <td></td>
+            <td *ngIf="product.author">{{product.author.firstName}} </td>
+            <td *ngIf="!product.author"> </td>
+            
             <td>
                 <button routerLink="/product-description/{{product.id}}"> Descriere</button>
             </td>

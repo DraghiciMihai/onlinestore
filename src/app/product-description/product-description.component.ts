@@ -24,10 +24,13 @@ export class ProductDescriptionComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.category = new Category(0, '', null, null)
+    // this.product= new ProductData;
+    // this.category = new Category(0, '', null, null);
+
     this.categoryService.retriveAllCategories().subscribe(
       response => this.categories = response
     )
+
     let id=this.activatedRoute.snapshot.paramMap.get('id');
     console.log("id este "+ id);
     this.productService.getProduct(Number(id)).subscribe(productResult => {

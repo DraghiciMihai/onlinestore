@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthorData } from '../authorData';
 import { ProductService } from '../product.service';
 import {ProductData} from '../productData'
@@ -14,7 +15,7 @@ export class ViewProductListComponent implements OnInit {
   productList: ProductData []= [];
   
 
-    constructor(private productService:ProductService) { }
+    constructor(private productService:ProductService, private router:Router) { }
 
   ngOnInit(): void {
     
@@ -24,7 +25,7 @@ export class ViewProductListComponent implements OnInit {
 
   public delete(id:number){
     this.productService.deleteProduct(id).subscribe(message=>{
-      this.ngOnInit();
+      this.router.navigateByUrl("");
       console.log("Product was deleted");
     })
   }
