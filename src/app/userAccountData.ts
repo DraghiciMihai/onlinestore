@@ -5,8 +5,8 @@ export class UserAccountData{
     login: string;
     password: string;
     city: string;
-    userAddress: UserAddressData;
-    deliveryAddress: UserAddressData;
+    userAdress: UserAddressData = new UserAddressData();
+    deliveryAdress: UserAddressData  = new UserAddressData();;
     logotype: string;
-    roletype: string;
+    roletype: string = "USER";
 }

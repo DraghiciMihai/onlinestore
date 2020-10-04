@@ -15,7 +15,7 @@ export class UserAccountService {
    }
    
    public getUserAccount(id: number): Observable<UserAccountData> {
-    return this.httpClient.get<UserAccountData>('http://localhost:8080/getUserAccount/' +id);
+    return this.httpClient.get<UserAccountData>('http://localhost:8080/getUserAccount/' + id);
   }
 
   public addUserAccount(userAccount: UserAccountData): Observable<any>{
@@ -23,7 +23,7 @@ export class UserAccountService {
   }
 
   public deleteUserAccount(id: number): Observable<string>{
-    return this.httpClient.delete<string>('http://localhost:8080/deleteUserAccount');
+    return this.httpClient.delete<string>('http://localhost:8080/deleteUserAccount/' + id);
   }
 
   public editUserAccount(userAccount: UserAccountData): Observable<any>{

@@ -11,11 +11,15 @@ import {CategoryComponent} from './category/category.component';
 import { ProductListUserComponent } from './product-list-user/product-list-user.component';
 import { OrderLineListComponent } from './order-line-list/order-line-list.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { EditUserAccountComponent } from './edit-user-account/edit-user-account.component';
 
 
 const routes: Routes = [
   {path: '', component: CategoryComponent},
   {path:'view-productList', component:ViewProductListComponent},
+  {path:'view-profile/:id', component:ViewProfileComponent},
+  {path:'edit-user-accout/:id', component:EditUserAccountComponent},
   {path:'product-description/:id', component:ProductDescriptionComponent},
   {path:'add-product-admin', component:AddProductAdminComponent},
   {path:'register', component: RegisterComponent},

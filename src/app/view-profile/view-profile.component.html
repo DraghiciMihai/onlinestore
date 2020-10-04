@@ -1,33 +1,30 @@
-<h2>Your profile</h2>
-<br>
-
-<div *ngFor='let user of userAccount'>
-    <p>Username: {{user.login}}</p>
-    <p>Password: {{user.password}}</p>
-    <p>City: {{user.city}}</p>
+<div class="profile" role="profile">
+    <h2>Your profile</h2>
 </div>
-<br>
+<div class="div-login">
+    <p>Username: {{userAccount.login}}</p>
+    <p>Password: {{userAccount.password}}</p>
+    <p>City: {{userAccount.city}}</p>
+</div>
 <hr>
-<div *ngFor='let address of userAccount'>
+<div class="div-homeAddress">
     <p>Your home address:</p>
     <br>
-    <p>Country: {{address.userAddress.country}}</p>
-    <p>City: {{address.city}}</p>
-    <p>Street: {{address.street}}</p>
-    <p>Zipcode: {{address.zipcode}}</p>
+    <p>Country: {{userAccount.userAdress.country}}</p>
+    <p>City: {{userAccount.userAdress.city}}</p>
+    <p>Street: {{userAccount.userAdress.street}}</p>
+    <p>Zipcode: {{userAccount.userAdress.zipcode}}</p>
 </div>
-<br>
 <hr>
-<div *ngFor='let delivery of userAccount'>
+<div class="div-DeliveryAddress">
     <p>Your delivery address</p>
     <br>
-    <p>Country: {{delivery.deliveryAddress.country}}</p>
-    <p>City: {{delivery.city}}</p>
-    <p>Street: {{delivery.street}}</p>
-    <p>Zipcode: {{delivery.zipcode}}</p>
+    <p>Country: {{userAccount.deliveryAdress.country}}</p>
+    <p>City: {{userAccount.deliveryAdress.city}}</p>
+    <p>Street: {{userAccount.deliveryAdress.street}}</p>
+    <p>Zipcode: {{userAccount.deliveryAdress.zipcode}}</p>
 </div>
-<br>
-<div *ngFor='let account of userAccount'>
-    <button (click)="delet(account.id)">DELETE</button>
-    <button routerLink="/edit-user-account/{{account.id}}">EDIT</button>
+<div>
+        <button routerLink="/edit-user-accout/{{userAccount.id}}" class="btn btn-success">EDIT</button>
+        <button (click)="delete(userAccount.id)" class="btn btn-danger">DELETE</button>
 </div>

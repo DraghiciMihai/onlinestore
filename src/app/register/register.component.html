@@ -1,49 +1,104 @@
-<h2>Registration</h2>
-<div>
-    <p>Username:</p>
-    <input type="text" [(ngModel)]="userAccount.login" placeholder="username">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <p>Password:</p>
-    <input type="password" [(ngModel)]="userAccount.password" placeholder="*******">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 
-    <p>City:</p>
-    <input type="text" [(ngModel)]="userAccount.city" placeholder="City">
-    <div>
-        <p>Home address</p>
-        <hr>
-        <p>Country</p>
-        <input type="text" [(ngModel)]="userAccount.userAddress.country" placeholder="Romania">
 
-        <p>City</p>
-        <input type="text" [(ngModel)]="userAccount.userAddress.city" placeholder="Brasov">
-
-        <p>Street</p>
-        <input type="text" [(ngModel)]="userAccount.userAddress.street" placeholder="Strada Calea Bucuresti, nr. 20">
-
-        <p>Zipcode</p>
-        <input type="number" [(ngModel)]="userAccount.userAddress.zipcode" placeholder="321534">
-        <hr>
-    </div>
-    <div>
-        <p>Delivery address</p>
-        <hr>
-        <p>Country</p>
-        <input type="text" [(ngModel)]="userAccount.deliveryAddress.country" placeholder="Romania">
-
-        <p>City</p>
-        <input type="text" [(ngModel)]="userAccount.deliveryAddress.city" placeholder="Brasov">
-
-        <p>Street</p>
-        <input type="text" [(ngModel)]="userAccount.deliveryAddress.street" placeholder="Strada Calea Bucuresti, nr. 20">
-
-        <p>Zipcode</p>
-        <input type="number" [(ngModel)]="userAccount.deliveryAddress.zipcode" placeholder="321534">
-        <hr>
-    </div>
-
-    <p>Logo</p>
-    <input type="text" [(ngModel)]="userAccount.logotype" placeholder="logo">
-
-</div>
-<br>
-<button (click)="addUserAccount()">Register</button>
+<div class="container">
+    <form class="form-horizontal" role="form">
+        <h2>Registration</h2>
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email* </label>
+            <div class="col-sm-9">
+                <input type="email" [(ngModel)]="userAccount.login" id="email" placeholder="Email" class="form-control" name= "email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password*</label>
+            <div class="col-sm-9">
+                <input type="password" [(ngModel)]="userAccount.password" id="password" placeholder="Password" class="form-control"
+                [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+        <div class="from-group">
+            <label for="city" class="col-sm-3 control-label">City</label>
+            <div class="col-sm-9">
+                <input type="text" id="city" class="form-control" [(ngModel)]="userAccount.city" placeholder="City"
+                [ngModelOptions]="{standalone: true}" autofocus>
+            </div>
+        </div>
+        <br>
+        <h4>Home address</h4>
+        <div class="form-group">
+            <label for="home-country" class="col-sm-3 control-label">Country</label>
+            <div class="col-sm-9">
+                <input type="text" id="home-country" class="form-control" [(ngModel)]="userAccount.userAdress.country"
+                    placeholder="Romania" autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="home-city" class="col-sm-3 control-label">City</label>
+            <div class="col-sm-9">
+                <input type="text" id="home-city" class="form-control" [(ngModel)]="userAccount.userAdress.city"
+                    placeholder="Brasov" autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="home-street" class="col-sm-3 control-label">Street</label>
+            <div class="col-sm-9">
+                <input type="text" id="home-street" class="form-control"
+                    [(ngModel)]="userAccount.userAdress.street" placeholder="Strada Calea Bucuresti, nr. 20" autofocus>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="home-zipcode" class="col-sm-3 control-label">Zipcode</label>
+            <div class="col-sm-9">
+                <input type="text" id="home-zipcode" class="col-sm-3 control-label"
+                    [(ngModel)]="userAccount.userAdress.zipcode" placeholder="321534" autofocus>
+            </div>
+        </div>
+        <h4>Delivery address</h4>
+        <div class="form-group">
+            <label for="delivery-country" class="col-sm-3 control-label">Country</label>
+            <div class="col-sm-9">
+                <input type="text" id="delivery-country" class="form-control"
+                    [(ngModel)]="userAccount.deliveryAdress.country" placeholder="Romania" autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="delivery-city" class="col-sm-3 control-label">City</label>
+            <div class="col-sm-9">
+                <input type="text" id="delivery-city" class="form-control" [(ngModel)]="userAccount.deliveryAdress.city"
+                    placeholder="Brasov" autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="delivery-street" class="col-sm-3 control-label">Street</label>
+            <div class="col-sm-9">
+                <input type="text" id="delivery-street" class="form-control"
+                    [(ngModel)]="userAccount.deliveryAdress.street" placeholder="Strada Calea Bucuresti, nr. 20"
+                    autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="delivery-zipcode" class="col-sm-3 control-label">Zipcode</label>
+            <div class="col-sm-9">
+                <input type="text" id="delivery-zipcode" class="col-sm-3 control-label"
+                    [(ngModel)]="userAccount.deliveryAdress.zipcode" placeholder="321534" autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="logotype" class="col-sm-3 control-label">Logo</label>
+            <div class="col-sm-9">
+                <input type="text" id="logotype" class="col-sm-3 control-label" [(ngModel)]="userAccount.logotype"
+                    placeholder="Logo" [ngModelOptions]="{standalone: true}" autofocus>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block" (click)="addUserAccount()">Register</button>
+    </form> <!-- ./form -->
+</div> <!-- ./container -->
