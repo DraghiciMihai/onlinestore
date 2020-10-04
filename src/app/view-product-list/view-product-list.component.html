@@ -1,17 +1,48 @@
+<!-- <button routerLink="/add-product-admin">Add product</button> -->
 
-<button routerLink="/add-product-admin">Add product</button>
-
-<div>
+<!-- <div>
     <div *ngFor="let product of productList">
-        <div>{{product.id}}. {{product.title }},  
-            <!-- author: id: {{product.author.id}}, name:{{product.author.name}} -->
-        
-        <button routerLink="/product-description/{{product.id}}"> Show product</button>        
-        <button routerLink="/update-product-admin/{{product.id}}"> Update product</button>
+        <div>{{product.id}}. {{product.title }},
+            author: id: {{product.author.id}}, name:{{product.author.firstName}}
 
-       
-        <button (click)="delete(product.id)">Delete</button>
-        
-        </div>  
+            <button routerLink="/product-description/{{product.id}}"> Show product</button>
+            <button routerLink="/update-product-admin/{{product.id}}"> Update product</button>
+
+            <button (click)="delete(product.id)">Delete</button>
+
+        </div>
     </div>
-</div>
+</div> -->
+
+<h2> Admin view</h2>
+<hr>
+<button routerLink="/add-product-admin" mat-raised-button color="primary">Add product</button>
+<hr>
+
+<table>
+    <thead>
+        <tr>
+            <th> Id Produs</th>
+            <th> Denumire Produs</th>
+            <th> Categoria Produsului</th>
+            <th>Pret Produs</th>
+            <th>Gestionar Produs</th>
+            <th>Functionalitati</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productList">
+            <td>{{product.id}} </td>
+            <td>{{product.title }}</td>
+            <td *ngIf="product.category">{{product.category.name}} </td>
+            <!-- <td> </td> -->
+            <td>{{product.price}} </td>
+            <td *ngIf="product.author">{{product.author.firstname}} </td>
+            <td></td>
+            <td>
+                <button routerLink="/product-description/{{product.id}}"> Descriere</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

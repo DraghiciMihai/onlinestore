@@ -1,0 +1,27 @@
+table, th, td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    
+  }
+
+  td{
+      margin-left: 10px;
+      margin-right: 10px;
+      text-align: right;
+  }
+  th, td {
+    padding: 15px;
+  }
+
+  th{
+
+    background-color:green;
+
+    color:burlywood;
+  }
+
+  button{
+    background-color:yellowgreen;
+
+    color:black;
+  }

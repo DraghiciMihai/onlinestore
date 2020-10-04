@@ -21,6 +21,7 @@ export class AddProductAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.product.category = this.category;
+    this.product.author=this.author;
   }
 
 

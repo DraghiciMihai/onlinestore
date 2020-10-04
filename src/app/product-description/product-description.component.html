@@ -2,20 +2,21 @@
 
 <div>
     <p>Title:</p>
-    <input type="text" [(ngModel)]= "product.title" placeholder="Title:"/>
-    
-        <!-- <p>Product Type:</p> -->
+    <input type="text" [(ngModel)]="product.title" placeholder="Title:" />
+
+    <!-- <p>Product Type:</p> -->
     <!-- <input type="text" [(Ngmodule)]="product.type"/> -->
-    
+
     <p>Price</p>
-    <input type="number" [(ngModel)]= "product.price" />
+    <input type="number" [(ngModel)]="product.price" />
 
     <p>Description</p>
-    <input type="textarea" placeholder= "Aici va fi descrierea."/>
+    <input type="textarea" placeholder="Aici va fi descrierea." />
 
     <p>The product category is: </p>
-    <input type="text" [(ngModel)]= "product.category.name"/>
+    <input type="text" [(ngModel)]="product.category.name" />
 
 </div>
+<button routerLink="/update-product-admin/{{product.id}}"> Go to update</button>
 
-
+<button (click)="delete(product.id)" class="del-button"mat-raised-button color="primary">Delete</button>
