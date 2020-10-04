@@ -26,7 +26,7 @@ public delete(id:number){
 }
 
 addToCart(product):void{
-
+console.log("Adauga in cos")
 }
 
 }

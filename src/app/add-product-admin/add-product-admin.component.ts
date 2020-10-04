@@ -30,6 +30,7 @@ export class AddProductAdminComponent implements OnInit {
       response => this.categories = response
     )
     this.product.category = this.category;
+    this.product.author=this.author;
   }
 
 

@@ -12,10 +12,12 @@ export class ViewProductListComponent implements OnInit {
 
 
   productList: ProductData []= [];
+  
 
     constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
+    
     this.productService.getProducts().subscribe(foundListOfProduct=>
       this.productList=foundListOfProduct)
   }

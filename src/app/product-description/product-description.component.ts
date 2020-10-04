@@ -42,4 +42,10 @@ export class ProductDescriptionComponent implements OnInit {
     });
   }
 
+   delete(id:number){
+    this.productService.deleteProduct(id).subscribe(message=>{
+      this.ngOnInit();
+      console.log("Product was deleted");
+    })
+  }
   }

@@ -1,13 +1,33 @@
+<h2> USER view</h2>
+<hr>
+<hr>
 
-<div>
-    <div *ngFor="let product of productList">
-        <div>{{product.id}}. {{product.title }},  
-            <!-- author: id: {{product.author.id}}, name:{{product.author.name}} -->
-        
-        <button routerLink="/product-description/{{product.id}}"> Show product</button> 
-        <button (click)="addToCart(product.id)">Add to cart</button>       
+<table>
+    <thead>
+        <tr>
+            <th> Id Produs</th>
+            <th> Denumire Produs</th>
+            <th> Categoria Produsului</th>
+            <th>Pret Produs</th>
+            <th>Functionalitati</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productList">
+            <td>{{product.id}} </td>
+            <td>{{product.title }}</td>
+            <td *ngIf="product.category">{{product.category.name}} </td>
+            <!-- <td> </td> -->
+            <td>{{product.price}} </td>
+            <td>
+                <button routerLink="/product-description/{{product.id}}"> Descriere</button>
+                <button (click)="addToCart(product.id)">Add to cart</button>
+            </td>
 
-        
-        </div>  
-    </div>
-</div>
+        </tr>
+    </tbody>
+</table>
+<!-- <button routerLink="/product-description/{{product.id}}"> Show product</button> -->
+
+
+

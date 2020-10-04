@@ -23,8 +23,8 @@ public addProduct(product:ProductData): Observable<any>{
 }
 
 
-public deleteProduct(id:number):Observable<any>{
-  return this.httpClient.delete<any>('http://localhost:8080/deleteProduct/'+ id);
+public deleteProduct(id:number):Observable<string>{
+  return this.httpClient.delete<string>('http://localhost:8080/deleteProduct/'+ id);
 }
  public updateProduct(product:ProductData): Observable<any>{
    return this.httpClient.put<any>('http://localhost:8080/editProduct/', product);
