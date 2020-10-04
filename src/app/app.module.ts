@@ -16,6 +16,10 @@ import { AddProductAdminComponent } from './add-product-admin/add-product-admin.
 import { UpdateProductAdminComponent } from './update-product-admin/update-product-admin.component';
 import { OrderLineListComponent } from './order-line-list/order-line-list.component';
 import { OrderListComponent } from './order-list/order-list.component';
+import { ProductListUserComponent } from './product-list-user/product-list-user.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -31,6 +35,10 @@ import { OrderListComponent } from './order-list/order-list.component';
     AddProductAdminComponent,
     OrderLineListComponent,
     OrderListComponent,
+    ProductListUserComponent,
+    CategoriesComponent,
+    MenuComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

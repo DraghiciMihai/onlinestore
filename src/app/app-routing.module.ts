@@ -7,10 +7,14 @@ import{ProductDescriptionComponent} from './product-description/product-descript
  import {AddProductAdminComponent}from './add-product-admin/add-product-admin.component'
 import { UpdateProductAdminComponent } from './update-product-admin/update-product-admin.component';
 
-import {CategoryComponent} from './category/category.component'
+import {CategoryComponent} from './category/category.component';
+import { ProductListUserComponent } from './product-list-user/product-list-user.component';
+import { OrderLineListComponent } from './order-line-list/order-line-list.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 const routes: Routes = [
+  {path: '', component: CategoryComponent},
   {path:'view-productList', component:ViewProductListComponent},
   {path:'product-description/:id', component:ProductDescriptionComponent},
   {path:'add-product-admin', component:AddProductAdminComponent},
@@ -18,7 +22,10 @@ const routes: Routes = [
   {path:'getOrders', component: OrderComponent},
   {path:'update-product-admin/:id', component: UpdateProductAdminComponent},
   {path: 'categories', component: CategoryComponent},
-  {path:'register', component:RegisterComponent}
+  {path:'register', component:RegisterComponent},
+  {path:'categories/:id', component:CategoriesComponent},
+  {path:'productList-user', component :ProductListUserComponent},
+  {path: 'orderLine-list', component: OrderLineListComponent}
 ];
 
 @NgModule({

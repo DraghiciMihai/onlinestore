@@ -3,9 +3,9 @@
 
 <div>
     <div *ngFor="let product of productList">
-        <div>{{product.id}}. {{product.title }} -author: 
-            <p *ngFor="let item of productList.author">{{item.id}}. {{item.firstName}}, {{item.lastName}} </p>
-
+        <div>{{product.id}}. {{product.title }},  
+            <!-- author: id: {{product.author.id}}, name:{{product.author.name}} -->
+        
         <button routerLink="/product-description/{{product.id}}"> Show product</button>        
         <button routerLink="/update-product-admin/{{product.id}}"> Update product</button>
 

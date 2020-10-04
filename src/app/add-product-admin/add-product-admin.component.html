@@ -1,23 +1,29 @@
-<p>Product description</p>
-
-<div>
-    <p>Title:</p>
-    <input type="text" [(ngModel)]= "product.title" placeholder="Title:"/>
-    
-    <!-- <p>Product Type:</p> 
-    <input type="text" [(ngModel)]="product.type" placeholder="Product Type:"/>  
-    
-    trebuie sa il declar in PRODUCT DATA, dar nu stiu cum ca e enum-->
-    
-    <p>Price</p>
-    <input type="number" [(ngModel)]= "product.price" placeholder="price" />
-    
-    <p>Description</p>
-    <input type="text" placeholder= "Aici va fi descrierea."/>
-
-    <p>The product category is: </p>
-    <input type="text" [(ngModel)]= "product.category.name"/>
-
+<div class="container">
+    <h1>Product description</h1>
+    <form>
+        <fieldset class="form-group">
+            <label for="title">Title:</label>
+            <input class="form-control" name="title" type="text" [(ngModel)]="product.title" placeholder="Title:">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="price">Price:</label>
+            <input class="form-control" name="price" type="number" [(ngModel)]="product.price">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="description">Description:</label>
+            <input class="form-control" name="description" type="textarea" placeholder="Aici va fi descrierea.">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="parentCategory"></label>
+            <select class="form-control" [(ngModel)]="product.category.name" name="parentCategory"
+            value="product.category.name">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let category of categories" [ngValue]="category.name">
+                {{category.name}}
+            </option>
+            </select>
+        </fieldset>
+    </form>
+    <button class="btn btn-info" (click)="addProduct()">Add Product</button>
 </div>
 
-<button (click)="addProduct()">Add Product</button>

@@ -3,6 +3,9 @@ import { CategoryData } from '../categoryData';
 import { ProductService } from '../product.service';
 import { ProductData } from '../productData';
 import {Router} from '@angular/router';
+import { AuthorData } from '../authorData';
+import { Category } from '../category/category.component';
+import { CategoryDataService } from '../service/data/category-data.service';
 
 @Component({
   selector: 'app-add-product-admin',
@@ -12,15 +15,22 @@ import {Router} from '@angular/router';
 export class AddProductAdminComponent implements OnInit {
 
   product:ProductData= new ProductData;
-  category:CategoryData= new CategoryData;
+  category: Category = new Category(0,'',null, null);
+  author:AuthorData= new AuthorData;
+  categories: Category[];
 
-  constructor(private productService:ProductService, private router:Router) { }
+  constructor(
+    private productService:ProductService, 
+    private router:Router,
+    private categoryService: CategoryDataService) { }
 
 
   ngOnInit(): void {
+    this.categoryService.retriveAllCategories().subscribe(
+      response => this.categories = response
+    )
     this.product.category = this.category;
   }
-
 
 
 public addProduct(): void {
