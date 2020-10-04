@@ -22,6 +22,7 @@ const routes: Routes = [
   {path:'getOrders', component: OrderListComponent},
   {path:'update-product-admin/:id', component: UpdateProductAdminComponent},
   {path: 'categories', component: CategoryComponent},
+  {path:'register', component:RegisterComponent},
   {path:'categories/:id', component:CategoriesComponent},
   {path:'productList-user', component :ProductListUserComponent},
   {path: 'orderLine-list', component: OrderLineListComponent}

@@ -4,8 +4,9 @@ export class UserAccountData{
     id: number;
     login: string;
     password: string;
+    city: string;
     userAddress: UserAddressData;
-    deliveryAddres: UserAddressData;
-    logoType: string;
-    roleType: string;
+    deliveryAddress: UserAddressData;
+    logotype: string;
+    roletype: string;
 }

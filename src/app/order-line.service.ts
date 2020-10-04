@@ -22,4 +22,7 @@ export class OrderLineService {
     return this.httpClient.post<any>('http://localhost:8080/addOrderLine', orderLineData);
   }
 
+  public updateOrderLine(orderLineData: OrderLineData) : Observable<any>{
+    return this.httpClient.put<any>('http://localhost:8080/updateOrderLine', orderLineData);
+  }
 }

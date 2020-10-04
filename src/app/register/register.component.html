@@ -1,53 +1,49 @@
 <h2>Registration</h2>
-<!-- <div>
+<div>
     <p>Username:</p>
-    <input type="text" [(ngModel)]="" placeholder="username">
-    
+    <input type="text" [(ngModel)]="userAccount.login" placeholder="username">
+
     <p>Password:</p>
-    <input type="password" [(ngModel)]="userAccount.password" placeholder="password">
+    <input type="password" [(ngModel)]="userAccount.password" placeholder="*******">
 
     <p>City:</p>
-    <input type="text" [(ngModel)]="userAccount.password" placeholder="Brasov"> -->
+    <input type="text" [(ngModel)]="userAccount.city" placeholder="City">
+    <div>
+        <p>Home address</p>
+        <hr>
+        <p>Country</p>
+        <input type="text" [(ngModel)]="userAccount.userAddress.country" placeholder="Romania">
 
-    <!-- <form>
+        <p>City</p>
+        <input type="text" [(ngModel)]="userAccount.userAddress.city" placeholder="Brasov">
 
-        <div>
-            <p>Home address</p>
-            
-            <p>Country</p>
-            <input type="text"  placeholder="Romania">
+        <p>Street</p>
+        <input type="text" [(ngModel)]="userAccount.userAddress.street" placeholder="Strada Calea Bucuresti, nr. 20">
 
-            <p>City</p>
-            <input type="text" placeholder="Brasov">
+        <p>Zipcode</p>
+        <input type="number" [(ngModel)]="userAccount.userAddress.zipcode" placeholder="321534">
+        <hr>
+    </div>
+    <div>
+        <p>Delivery address</p>
+        <hr>
+        <p>Country</p>
+        <input type="text" [(ngModel)]="userAccount.deliveryAddress.country" placeholder="Romania">
 
-            <p>Street</p>
-            <input type="text" placeholder="Strada Calea Bucuresti, nr. 20">
+        <p>City</p>
+        <input type="text" [(ngModel)]="userAccount.deliveryAddress.city" placeholder="Brasov">
 
-            <p>Zipcode</p>
-            <input type="number" placeholder="321534">
-        </div>
-        <input type="checkbox" name="sameaddress" onclick="FillAddress(this.form)">
+        <p>Street</p>
+        <input type="text" [(ngModel)]="userAccount.deliveryAddress.street" placeholder="Strada Calea Bucuresti, nr. 20">
 
-        <div>
-            <p>Delivery address</p>
-            
-            <p>Country</p>
-            <input type="text" placeholder="Romania">
-
-            <p>City</p>
-            <input type="text" placeholder="Brasov">
-
-            <p>Street</p>
-            <input type="text" placeholder="Strada Calea Bucuresti, nr. 20">
-
-            <p>Zipcode</p>
-            <input type="number" placeholder="321534">
-        </div>
-    </form>
+        <p>Zipcode</p>
+        <input type="number" [(ngModel)]="userAccount.deliveryAddress.zipcode" placeholder="321534">
+        <hr>
+    </div>
 
     <p>Logo</p>
-    <input type="text" [(ngModel)]="userAccount.password" placeholder="logo">
+    <input type="text" [(ngModel)]="userAccount.logotype" placeholder="logo">
 
 </div>
-
-<button (onclick)="addUserAccount()">Register</button> -->
+<br>
+<button (click)="addUserAccount()">Register</button>

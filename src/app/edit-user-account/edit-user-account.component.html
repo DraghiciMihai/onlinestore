@@ -1,1 +1,49 @@
-<p>edit-user-account works!</p>
+<h3>Edit your account</h3>
+
+<div>
+    <p>Username:</p>
+    <input type="text" [(ngModel)]="userAccount.login" placeholder="username">
+
+    <p>Password:</p>
+    <input type="password" [(ngModel)]="userAccount.password" placeholder="*******">
+
+    <p>City:</p>
+    <input type="text" [(ngModel)]="userAccount.city" placeholder="City">
+    <div>
+        <p>Home address</p>
+        <hr>
+        <p>Country</p>
+        <input type="text" [(ngModel)]="userAccount.userAddress.country" placeholder="Romania">
+
+        <p>City</p>
+        <input type="text" [(ngModel)]="userAccount.userAddress.city" placeholder="Brasov">
+
+        <p>Street</p>
+        <input type="text" [(ngModel)]="userAccount.userAddress.street" placeholder="Strada Calea Bucuresti, nr. 20">
+
+        <p>Zipcode</p>
+        <input type="number" [(ngModel)]="userAccount.userAddress.zipcode" placeholder="321534">
+        <hr>
+    </div>
+    <div>
+        <p>Delivery address</p>
+        <hr>
+        <p>Country</p>
+        <input type="text" [(ngModel)]="userAccount.deliveryAddress.country" placeholder="Romania">
+
+        <p>City</p>
+        <input type="text" [(ngModel)]="userAccount.deliveryAddress.city" placeholder="Brasov">
+
+        <p>Street</p>
+        <input type="text" [(ngModel)]="userAccount.deliveryAddress.street" placeholder="Strada Calea Bucuresti, nr. 20">
+
+        <p>Zipcode</p>
+        <input type="number" [(ngModel)]="userAccount.deliveryAddress.zipcode" placeholder="321534">
+        <hr>
+    </div>
+
+    <p>Logo</p>
+    <input type="text" [(ngModel)]="userAccount.logotype" placeholder="logo">
+</div>
+
+<button (click)="editUserAccount()">SAVE</button>

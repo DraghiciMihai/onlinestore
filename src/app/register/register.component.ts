@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserAccountService } from '../userAccount.service';
-import { UserAccountData } from '../useAccountData';
-
+import { UserAccountService } from '../userAccount.service'
+import { UserAccountData } from '../userAccountData';
 
 @Component({
   selector: 'app-register',
@@ -11,19 +10,18 @@ import { UserAccountData } from '../useAccountData';
 })
 export class RegisterComponent implements OnInit {
 
-  userAccount: UserAccountData = new UserAccountData();
+  public userAccount: UserAccountData = new UserAccountData();
 
-  constructor(private userAccountService: UserAccountService, private router: Router) { }
+  constructor(private userAccountService: UserAccountService,private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  public addUserAccont(): void {
+  public addUserAccount(): void {
 
-    this.userAccountService.addUserAccount(this.userAccount).subscribe(result => {
-      console.log("UserAccount added")
-      this.router.navigateByUrl("");
-    });
-
+    this.userAccountService.addUserAccount(this.userAccount).subscribe(result =>{
+      console.log("Registered Succesfully!");
+      this.router.navigateByUrl('');
+    })
   }
 }

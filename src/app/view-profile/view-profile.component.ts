@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from '../product.service';
-import { UserAccountData } from '../useAccountData';
+import { Observable } from 'rxjs';
 import { UserAccountService } from '../userAccount.service';
-
+import { UserAccountData } from '../userAccountData';
 
 @Component({
   selector: 'app-view-profile',
@@ -12,16 +11,24 @@ import { UserAccountService } from '../userAccount.service';
 })
 export class ViewProfileComponent implements OnInit {
 
-  userAccount: UserAccountData = new UserAccountData();
+  public userAccount: UserAccountData = new UserAccountData();
 
-  constructor(private activateRoutes: ActivatedRoute, private userAccountService: UserAccountService, 
+
+  constructor(private activateRoutes: ActivatedRoute, private userAccountService: UserAccountService,
     private router: Router) { }
 
   ngOnInit(): void {
     let id = this.activateRoutes.snapshot.paramMap.get("id");
     console.log("Id: " + id);
-    this.userAccountService.getUserAccount(Number(id)).subscribe(userFound => {
-      this.userAccount = userFound;
+    this.userAccountService.getUserAccount(Number(id)).subscribe(userResult => {
+      this.userAccount = userResult;
+    })
+  }
+
+  delete(id: number) {
+    this.userAccountService.deleteUserAccount(id).subscribe(message => {
+      console.log(message);
+      this.router.navigateByUrl('');
     })
   }
 

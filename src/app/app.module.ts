@@ -19,7 +19,6 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { ProductListUserComponent } from './product-list-user/product-list-user.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider'
 
 import { CategoriesComponent } from './categories/categories.component';
 import { MenuComponent } from './menu/menu.component';

@@ -44,4 +44,10 @@ export class OrderLineListComponent implements OnInit {
       })
   }
 
+  orderLineUpdate(id: number){
+    this.orderLineService.updateOrderLine(this.orderLineData).subscribe(result =>{
+      
+    });
+  }
+
 }
