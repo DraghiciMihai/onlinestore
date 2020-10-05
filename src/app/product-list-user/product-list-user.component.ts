@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../order.service';
 import { ProductService } from '../product.service';
 import {ProductData} from '../productData'
 
@@ -11,7 +12,8 @@ export class ProductListUserComponent implements OnInit {
 
   productList: ProductData []= [];
 
-  constructor(private productService:ProductService) { }
+  constructor(private productService:ProductService,
+              private orderService:OrderService) { }
 
 ngOnInit(): void {
   this.productService.getProducts().subscribe(foundListOfProduct=>
@@ -26,7 +28,10 @@ public delete(id:number){
 }
 
 addToCart(product):void{
-console.log("Adauga in cos")
+  let productId : number  = product.id;
+  let userId : number = 5;
+  this.orderService.addToCart(productId, userId);
+console.log("Product " + product.title + " added to cart")
 }
 
 }

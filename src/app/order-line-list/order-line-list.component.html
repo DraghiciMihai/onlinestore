@@ -23,7 +23,7 @@
             
           <td ><input type="number" [(ngModel)]="item.quantity" placeholder="quantity:" /></td>
 
-          <td>{{item.quantity}}*{{item.price}}</td>
+          <td>{{item.quantity*item.price}}</td>
             
             <button (click)="delete(item.id)">Delete</button>
             <button routerLink="orderLineUpdate/{{item.id}}">Refresh</button>
