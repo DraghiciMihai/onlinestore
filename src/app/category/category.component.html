@@ -1,3 +1,4 @@
+<div class="container">
 <h1 class="text-primary">All Categories</h1><br>
 <div class='alert alert-success' *ngIf='deleteMessage'>{{deleteMessage}}</div>
 <div class="container">
@@ -11,7 +12,7 @@
             
             <ul *ngFor="let subcategory of category.subcategory">
                 <li *ngIf="subcategory">
-                    <p><button class="btn btn-link">{{subcategory.name}}</button> 
+                    <p><button (click)="goToCategory(subcategory)" class="btn btn-link">{{subcategory.name}}</button> 
                         <span><button class="btn btn-outline-success btn-sm" (click)="updateCategory(subcategory)">Update</button> <button
                             class="btn btn-outline-danger btn-sm" (click)="deleteCategory(subcategory)">Delete</button></span>
                     </p>
@@ -24,4 +25,5 @@
 </div><br><br>
 <div>
     <button class="btn btn-secondary" (click)="addCategory()">Add Category</button>
+</div>
 </div>

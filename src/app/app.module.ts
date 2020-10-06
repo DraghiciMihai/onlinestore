@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoriesComponent } from './categories/categories.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { ListProductsByCategoryComponent } from './list-products-by-category/list-products-by-category.component';
 
 
 
@@ -43,6 +44,7 @@ import { FooterComponent } from './footer/footer.component';
     CategoriesComponent,
     MenuComponent,
     FooterComponent,
+    ListProductsByCategoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+
+<div class="container">
+    <div style="text-align: center; font-weight: bolder;" class='alert alert-warning' *ngIf='emptyListMessage'>{{emptyListMessage}}</div>
+
+<h1 class="text-primary" *ngIf="welcomeMessage">Welcome to {{category.name}} Category</h1>
+<div>
+    <ul>
+        <li *ngFor="let product of products">
+           <p> {{product.title}} pret => {{product.price}} lei 
+            <span>
+                <button class="btn btn-outline-success btn-sm" 
+                routerLink="/update-product-admin/{{product.id}}">Update</button> 
+                <button class="btn btn-outline-danger btn-sm" 
+                (click)="delete(product)">Delete</button>
+            </span> 
+           </p>
+        </li>
+    </ul>
+    <button class="btn btn-light" routerLink="/categories">Go Back</button>
+</div>
+</div>
