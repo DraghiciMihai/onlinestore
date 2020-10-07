@@ -15,7 +15,7 @@
 
                     <ul *ngFor="let subcategory of category.subcategory">
                         <li *ngIf="subcategory">
-                            <p><button class="btn btn-link">{{subcategory.name}}</button>
+                            <p><button class="btn btn-link" (click)="goToCategory(subcategory)">{{subcategory.name}}</button>
                                 <span><button class="btn btn-outline-success btn-sm"
                                         (click)="updateCategory(subcategory)">Update</button> <button
                                         class="btn btn-outline-danger btn-sm"

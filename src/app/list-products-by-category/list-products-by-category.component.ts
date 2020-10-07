@@ -11,11 +11,11 @@ import { CategoryDataService } from '../service/data/category-data.service';
   styleUrls: ['./list-products-by-category.component.css']
 })
 export class ListProductsByCategoryComponent implements OnInit {
-  
+
   private id: number = 0
-  public category: Category = new Category (0, '', null, null)
+  public category: Category = new Category(0, '', null, null)
   public products: ProductData[] = null
-  deleteMessage:string
+  deleteMessage: string
   emptyListMessage: string
   welcomeMessage: string
 
@@ -29,32 +29,33 @@ export class ListProductsByCategoryComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
     this.service.retrieveCategory(this.id).
-    subscribe(response => this.category = response)
+      subscribe(response => this.category = response)
     this.listProducts()
   }
 
   listProducts() {
     this.service.retrieveProductsByCategory(this.id).subscribe(
-      data => {this.products = data
+      data => {
+        this.products = data
         console.log(this.products)
-        if(this.products == null) {
-        this.emptyListMessage = 'There are no products to show!'
+        if (this.products == null) {
+          this.emptyListMessage = 'There are no products to show!'
         } else {
           this.welcomeMessage = 'welcome'
 
         }
-      // console.log(data)
-      // console.log(this.products)
-    }
+        // console.log(data)
+        // console.log(this.products)
+      }
     )
   }
 
-  delete(product){
-    this.productService.deleteProduct(product.id).subscribe(message=>{
+  delete(product) {
+    this.productService.deleteProduct(product.id).subscribe(message => {
       this.ngOnInit();
       console.log("Product was deleted");
       this.deleteMessage = `Product ${product.title} was deleted Successfully`
-      this.welcomeMessage=null
+      this.welcomeMessage = null
     })
   }
 
