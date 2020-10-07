@@ -11,7 +11,7 @@ import { UserAccountData } from '../userAccountData';
 })
 export class ViewProfileComponent implements OnInit {
 
-  public userAccount: UserAccountData = new UserAccountData();
+  userAccount: UserAccountData = new UserAccountData();
 
 
   constructor(private activateRoutes: ActivatedRoute, private userAccountService: UserAccountService,

@@ -13,21 +13,22 @@
         <div class="form-group">
             <label for="email" class="col-sm-3 control-label">Email* </label>
             <div class="col-sm-9">
-                <input type="email" [(ngModel)]="userAccount.login" id="email" placeholder="Email" class="form-control" name= "email">
+                <input type="email" [(ngModel)]="userAccount.login" id="email" placeholder="Email" class="form-control"
+                    name="email">
             </div>
         </div>
         <div class="form-group">
             <label for="password" class="col-sm-3 control-label">Password*</label>
             <div class="col-sm-9">
-                <input type="password" [(ngModel)]="userAccount.password" id="password" placeholder="Password" class="form-control"
-                [ngModelOptions]="{standalone: true}">
+                <input type="password" [(ngModel)]="userAccount.password" id="password" placeholder="Password"
+                    class="form-control" [ngModelOptions]="{standalone: true}">
             </div>
         </div>
         <div class="from-group">
             <label for="city" class="col-sm-3 control-label">City</label>
             <div class="col-sm-9">
                 <input type="text" id="city" class="form-control" [(ngModel)]="userAccount.city" placeholder="City"
-                [ngModelOptions]="{standalone: true}" autofocus>
+                    [ngModelOptions]="{standalone: true}" autofocus>
             </div>
         </div>
         <br>
@@ -36,21 +37,21 @@
             <label for="home-country" class="col-sm-3 control-label">Country</label>
             <div class="col-sm-9">
                 <input type="text" id="home-country" class="form-control" [(ngModel)]="userAccount.userAdress.country"
-                    placeholder="Romania" autofocus>
+                    placeholder="Romania" [ngModelOptions]="{standalone: true}" autofocus>
             </div>
         </div>
         <div class="form-group">
             <label for="home-city" class="col-sm-3 control-label">City</label>
             <div class="col-sm-9">
                 <input type="text" id="home-city" class="form-control" [(ngModel)]="userAccount.userAdress.city"
-                    placeholder="Brasov" autofocus>
+                    placeholder="Brasov" [ngModelOptions]="{standalone: true}" autofocus>
             </div>
         </div>
         <div class="form-group">
             <label for="home-street" class="col-sm-3 control-label">Street</label>
             <div class="col-sm-9">
-                <input type="text" id="home-street" class="form-control"
-                    [(ngModel)]="userAccount.userAdress.street" placeholder="Strada Calea Bucuresti, nr. 20" autofocus>
+                <input type="text" id="home-street" class="form-control" [(ngModel)]="userAccount.userAdress.street"
+                    placeholder="Strada Calea Bucuresti, nr. 20" [ngModelOptions]="{standalone: true}" autofocus>
             </div>
         </div>
         <br>
@@ -58,7 +59,8 @@
             <label for="home-zipcode" class="col-sm-3 control-label">Zipcode</label>
             <div class="col-sm-9">
                 <input type="text" id="home-zipcode" class="col-sm-3 control-label"
-                    [(ngModel)]="userAccount.userAdress.zipcode" placeholder="321534" autofocus>
+                    [(ngModel)]="userAccount.userAdress.zipcode" placeholder="321534"
+                    [ngModelOptions]="{standalone: true}" autofocus>
             </div>
         </div>
         <h4>Delivery address</h4>
@@ -66,29 +68,31 @@
             <label for="delivery-country" class="col-sm-3 control-label">Country</label>
             <div class="col-sm-9">
                 <input type="text" id="delivery-country" class="form-control"
-                    [(ngModel)]="userAccount.deliveryAdress.country" placeholder="Romania" autofocus>
+                    [(ngModel)]="userAccount.deliveryAdress.country" [ngModelOptions]="{standalone: true}"
+                    placeholder="Romania" autofocus>
             </div>
         </div>
         <div class="form-group">
             <label for="delivery-city" class="col-sm-3 control-label">City</label>
             <div class="col-sm-9">
-                <input type="text" id="delivery-city" class="form-control" [(ngModel)]="userAccount.deliveryAdress.city"
-                    placeholder="Brasov" autofocus>
+                <input type="text" id="delivery-city" [ngModelOptions]="{standalone: true}" class="form-control"
+                    [(ngModel)]="userAccount.deliveryAdress.city" placeholder="Brasov" autofocus>
             </div>
         </div>
         <div class="form-group">
             <label for="delivery-street" class="col-sm-3 control-label">Street</label>
             <div class="col-sm-9">
                 <input type="text" id="delivery-street" class="form-control"
-                    [(ngModel)]="userAccount.deliveryAdress.street" placeholder="Strada Calea Bucuresti, nr. 20"
-                    autofocus>
+                    [(ngModel)]="userAccount.deliveryAdress.street" [ngModelOptions]="{standalone: true}"
+                    placeholder="Strada Calea Bucuresti, nr. 20" autofocus>
             </div>
         </div>
         <div class="form-group">
             <label for="delivery-zipcode" class="col-sm-3 control-label">Zipcode</label>
             <div class="col-sm-9">
                 <input type="text" id="delivery-zipcode" class="col-sm-3 control-label"
-                    [(ngModel)]="userAccount.deliveryAdress.zipcode" placeholder="321534" autofocus>
+                    [(ngModel)]="userAccount.deliveryAdress.zipcode" [ngModelOptions]="{standalone: true}"
+                    placeholder="321534" autofocus>
             </div>
         </div>
         <div class="form-group">

@@ -25,6 +25,9 @@
     <p>Zipcode: {{userAccount.deliveryAdress.zipcode}}</p>
 </div>
 <div>
+    <p>Logo: {{userAccount.logotype}}</p>
+</div>
+<div>
         <button routerLink="/edit-user-accout/{{userAccount.id}}" class="btn btn-success">EDIT</button>
         <button (click)="delete(userAccount.id)" class="btn btn-danger">DELETE</button>
 </div>

@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   public userAccount: UserAccountData = new UserAccountData();
 
-  constructor(private userAccountService: UserAccountService,private router: Router) { }
+  constructor(private userAccountService: UserAccountService, private router: Router) { }
 
   ngOnInit(): void {
   }
