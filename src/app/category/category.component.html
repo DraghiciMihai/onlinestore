@@ -1,27 +1,35 @@
-<h1 class="text-primary">All Categories</h1><br>
-<div class='alert alert-success' *ngIf='deleteMessage'>{{deleteMessage}}</div>
-<div class="container">
+<div id="page-container">
+    <div id="wrap-content">
+        <h1 class="text-primary">All Categories</h1><br>
+        <div class='alert alert-success' *ngIf='deleteMessage'>{{deleteMessage}}</div>
+        <div class="container">
 
-    <ul *ngFor="let category of categories">
-        <li *ngIf="!category.parentCategory">
-            <p class="font-weight-bold"> {{category.name}} 
-                <span><button class="btn btn-outline-success btn-sm" (click)="updateCategory(category)">Update</button> <button
-                    class="btn btn-outline-danger btn-sm" (click)="deleteCategory(category)">Delete</button></span>
-            </p>
-            
-            <ul *ngFor="let subcategory of category.subcategory">
-                <li *ngIf="subcategory">
-                    <p><button class="btn btn-link">{{subcategory.name}}</button> 
-                        <span><button class="btn btn-outline-success btn-sm" (click)="updateCategory(subcategory)">Update</button> <button
-                            class="btn btn-outline-danger btn-sm" (click)="deleteCategory(subcategory)">Delete</button></span>
+            <ul *ngFor="let category of categories">
+                <li *ngIf="!category.parentCategory">
+                    <p class="font-weight-bold"> {{category.name}}
+                        <span><button class="btn btn-outline-success btn-sm"
+                                (click)="updateCategory(category)">Update</button> <button
+                                class="btn btn-outline-danger btn-sm"
+                                (click)="deleteCategory(category)">Delete</button></span>
                     </p>
-                    
+
+                    <ul *ngFor="let subcategory of category.subcategory">
+                        <li *ngIf="subcategory">
+                            <p><button class="btn btn-link">{{subcategory.name}}</button>
+                                <span><button class="btn btn-outline-success btn-sm"
+                                        (click)="updateCategory(subcategory)">Update</button> <button
+                                        class="btn btn-outline-danger btn-sm"
+                                        (click)="deleteCategory(subcategory)">Delete</button></span>
+                            </p>
+
+                        </li>
+                    </ul>
                 </li>
             </ul>
-        </li>
-    </ul>
 
-</div><br><br>
-<div>
-    <button class="btn btn-secondary" (click)="addCategory()">Add Category</button>
+        </div><br><br>
+        <div>
+            <button class="btn btn-secondary" (click)="addCategory()">Add Category</button>
+        </div>
+    </div>
 </div>
