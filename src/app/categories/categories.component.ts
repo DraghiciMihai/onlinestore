@@ -52,9 +52,5 @@ export class CategoriesComponent implements OnInit {
       )
     }
   }
-  back() {
-    this.router.navigate(['categories'])
-  }
-
 
 }

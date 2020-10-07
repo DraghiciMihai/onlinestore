@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Category } from 'src/app/category/category.component';
+import { ProductData } from 'src/app/productData';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,9 @@ export class CategoryDataService {
 
   createCategory(category) {
     return this.http.post('http://localhost:8080/addCategory', category)
+  }
+
+  retrieveProductsByCategory(id) {
+    return this.http.get<ProductData[]>(`http://localhost:8080/getProductsByCategory/${id}`)
   }
 }

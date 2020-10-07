@@ -13,6 +13,7 @@ import { OrderLineListComponent } from './order-line-list/order-line-list.compon
 import { CategoriesComponent } from './categories/categories.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { EditUserAccountComponent } from './edit-user-account/edit-user-account.component';
+import { ListProductsByCategoryComponent } from './list-products-by-category/list-products-by-category.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'categories/:id', component:CategoriesComponent},
   {path:'productList-user', component :ProductListUserComponent},
-  {path: 'orderLine-list', component: OrderLineListComponent}
+  {path: 'orderLine-list', component: OrderLineListComponent},
+  {path: 'view-products/:id', component: ListProductsByCategoryComponent}
 ];
 
 @NgModule({

@@ -20,7 +20,7 @@ export class Category {
 export class CategoryComponent implements OnInit {
 
   categories: Category[]
-  deleteMessage
+  deleteMessage:string
 
   constructor(
     private service: CategoryDataService,
@@ -55,5 +55,13 @@ export class CategoryComponent implements OnInit {
   addCategory() {
     console.log('adding a new category')
     this.router.navigate(['categories', 0])
+  }
+
+  goToCategory(subcategory) {
+    console.log('going to category products')
+    // this.service.retrieveProductsByCategory(subcategory.id).subscribe(
+    //   response => console.log(response)
+    // )
+    this.router.navigate(['view-products',subcategory.id])
   }
 }
